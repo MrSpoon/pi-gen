@@ -1,0 +1,15 @@
+git
+python python3
+python-dev python3-dev
+python-pip python3-pip
+python-picamera python3-picamera
+python3-pygame python-pygame
+python-serial python3-serial
+python-smbus python3-smbus
+espeak
+pypy
+raspi-gpio python3-rpi.gpio
+ffmpeg
+pulseaudio
+vim
+i2c-tools

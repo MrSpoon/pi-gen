@@ -40,6 +40,7 @@
 #sdtv_mode=2
 
 #uncomment to overclock the arm. 700 MHz is the default.
+#Don't overclock without extra cooling!
 #arm_freq=800
 
 # Uncomment some or all of these to enable the optional hardware interfaces
@@ -52,5 +53,6 @@
 
 # Additional overlays and parameters are documented /boot/overlays/README
 
-# Enable audio (loads snd_bcm2835)
-dtparam=audio=on
+# If something goes wrong comment out everthing below until problem goes away.
+dtparam=audio=off
+dtparam=act_led_trigger=heartbeat
