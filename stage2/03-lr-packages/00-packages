@@ -13,3 +13,7 @@ ffmpeg
 pulseaudio
 vim
 i2c-tools
+screen
+command-not-found
+nload
+glances
