@@ -1,0 +1,13 @@
+Index: jessie-stage2/rootfs/etc/ssh/sshd_config
+===================================================================
+--- jessie-stage2.orig/rootfs/etc/ssh/sshd_config
++++ jessie-stage2/rootfs/etc/ssh/sshd_config
+@@ -86,7 +86,7 @@ UsePAM yes
+ #AllowAgentForwarding yes
+ #AllowTcpForwarding yes
+ #GatewayPorts no
+-X11Forwarding yes
++X11Forwarding no
+ #X11DisplayOffset 10
+ #X11UseLocalhost yes
+ #PermitTTY yes

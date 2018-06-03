@@ -1,0 +1,5 @@
+#!/bin/bash
+tm=`/opt/vc/bin/vcgencmd measure_temp`
+tc=`echo $tm| cut -d '=' -f2 | sed 's/..$//'`
+tf=`dc -e "1k 32 $tc 9 5 / * + p"`
+echo $tc\°C \($tf\°F\)

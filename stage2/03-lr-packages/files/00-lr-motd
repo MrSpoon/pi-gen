@@ -1,0 +1,30 @@
+#!/bin/bash
+echo ' _        _______ _________ _  _______
+( \      (  ____ \\__   __/( )(  ____ \
+| (      | (    \/   ) (   |/ | (    \/
+| |      | (__       | |      | (_____
+| |      |  __)      | |      (_____  )
+| |      | (         | |            ) |
+| (____/\| (____/\   | |      /\____) |
+(_______/(_______/   )_(      \_______)
+ _______  _______  ______   _______ _________  _
+(  ____ )(  ___  )(  ___ \ (  ___  )\__   __/ ( )
+| (    )|| (   ) || (   ) )| (   ) |   ) (    | |
+| (____)|| |   | || (__/ / | |   | |   | |    | |
+|     __)| |   | ||  __ (  | |   | |   | |    | |
+| (\ (   | |   | || (  \ \ | |   | |   | |    (_)
+| ) \ \__| (___) || )___) )| (___) |   | |     _
+|/   \__/(_______)|/ \___/ (_______)   )_(    (_)
+https://letsrobot.tv'
+
+tm=`/opt/vc/bin/vcgencmd measure_temp`
+tc=`echo $tm| cut -d '=' -f2 | sed 's/..$//'`
+tf=`dc -e "1k 32 $tc 9 5 / * + p"`
+echo "CPU Temp: $tc°C ($tf°F)"
+echo "Used disk space: `df -h --output=pcent / | sed -rn '2s/\W+//p'`"
+echo "Free memory: $((`cat /proc/meminfo | sed '/MemAvailable/!d' | sed 's/[^[:digit:]]//g'`/1024))M"
+
+#NOTICE! Sometimes signal stregth is based on xx of 70 and not xx of 100. 
+awk 'NR==3 {print "WiFi Signal: " $3 "00%"}' /proc/net/wireless
+
+echo "For help visit out Discord server. "

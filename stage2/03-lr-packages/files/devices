@@ -1,0 +1,8 @@
+#!/bin/bash
+aplay -l
+echo ""
+arecord -l
+echo -e "\n**** List of VIDEO Capture Devices ****"
+v4l2-ctl --list-devices
+echo "**** List of I2C Connected Devices ****"
+i2cdetect -y 1
