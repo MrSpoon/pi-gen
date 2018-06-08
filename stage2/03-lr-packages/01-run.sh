@@ -1,10 +1,5 @@
 #!/bin/bash -e
 
-pip install --root="${ROOTFS_DIR}" requests
-pip install --root="${ROOTFS_DIR}" socketIO-client
-pip3 install --root="${ROOTFS_DIR}" requests
-pip3 install --root="${ROOTFS_DIR}" socketIO-client
-
 git clone "https://github.com/runmyrobot/runmyrobot" "${ROOTFS_DIR}/home/robocaster/runmyrobot"
 chown -Rv 1000:1000 "${ROOTFS_DIR}/home/robocaster/runmyrobot"
 
@@ -16,5 +11,10 @@ install -v -m 755 files/00-lr-motd	"${ROOTFS_DIR}/etc/update-motd.d"
 echo "i2c-dev" >> ${ROOTFS_DIR}/etc/modules
 
 on_chroot << EOF
+apt update
 update-command-not-found
+pip install requests
+pip install socketIO-client
+pip3 install requests
+pip3 install socketIO-client
 EOF
